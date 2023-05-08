@@ -27,7 +27,7 @@ public class AuthService {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     public Response login(@FormParam("username") String username, @FormParam("password") String password) {
-        // Verificar las credenciales del usuario aquí (por ejemplo, en una base de datos)
+        // Verificar las credenciales del usuario aquí.
         // Si las credenciales son válidas, generar un token JWT
         if (isValidCredentials(username, password)) {
             String token = generateToken(username);
@@ -38,7 +38,7 @@ public class AuthService {
     }
 
     private boolean isValidCredentials(String username, String password) {
-        // Lógica para verificar las credenciales del usuario (puede ser una consulta a la base de datos o cualquier otra lógica)
+        // Lógica para verificar las credenciales del usuario.
         // Devuelve true si las credenciales son válidas y false en caso contrario
         return "admin".equals(username) && "password".equals(password);
     }
